@@ -373,5 +373,44 @@ describe('System: DEV Signing Parity', () => {
       );
       expect(expandedProfileWithWalletResp.wallets).toBeDefined();
     });
+
+    it.skip('should add a evm external wallet identifier to a profile', async () => {
+      // c72c7141-9476-41cc-925b-c6caa2309e95
+      const api = new BaseStardustAPI(DEV_SYSTEM_STARDUST_API_KEY, DEV_SYSTEM_STARDUST_API_URL);
+      const resp = await api.apiPost('profile/identifier/external-wallet/evm', {
+        profileId: DEV_SYSTEM_STARDUST_PROFILE_ID,
+        value: '0x7f20A31bFCC1d8B5CCAb68611812AE4204622677',
+      });
+      expect(resp).toBeDefined();
+      expect(resp.id).toBeDefined();
+      expect(resp.service).toBe('EVM');
+      expect(resp.value).toBe('0x7f20A31bFCC1d8B5CCAb68611812AE4204622677');
+    });
+
+    it.skip('should add a sol external wallet identifier to a profile', async () => {
+      // 81cf023c-03bc-4084-97a2-9bcab065481a
+      const api = new BaseStardustAPI(DEV_SYSTEM_STARDUST_API_KEY, DEV_SYSTEM_STARDUST_API_URL);
+      const resp = await api.apiPost('profile/identifier/external-wallet/solana', {
+        profileId: DEV_SYSTEM_STARDUST_PROFILE_ID,
+        value: '7rhxnLV8C77o6d8oz26AgK8x8m5ePsdeRawjqvojbjnQ',
+      });
+      expect(resp).toBeDefined();
+      expect(resp.id).toBeDefined();
+      expect(resp.service).toBe('SOL');
+      expect(resp.value).toBe('7rhxnLV8C77o6d8oz26AgK8x8m5ePsdeRawjqvojbjnQ');
+    });
+
+    it.skip('should add a sui external wallet identifier to a profile', async () => {
+      // b1f059cb-5a9a-4e4a-8cc1-0053b62a1e9d
+      const api = new BaseStardustAPI(DEV_SYSTEM_STARDUST_API_KEY, DEV_SYSTEM_STARDUST_API_URL);
+      const resp = await api.apiPost('profile/identifier/external-wallet/sui', {
+        profileId: DEV_SYSTEM_STARDUST_PROFILE_ID,
+        value: '0x2701eb93b0ba04e1a9815381b6d2671893e9c43b90374049ee08fa1f0b8a3b3f',
+      });
+      expect(resp).toBeDefined();
+      expect(resp.id).toBeDefined();
+      expect(resp.service).toBe('SUI');
+      expect(resp.value).toBe('0x2701eb93b0ba04e1a9815381b6d2671893e9c43b90374049ee08fa1f0b8a3b3f');
+    });
   });
 });

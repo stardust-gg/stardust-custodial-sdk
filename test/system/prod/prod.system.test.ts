@@ -2,6 +2,7 @@ import StardustApplication from '../../../src/stardust/Application/StardustAppli
 import BaseStardustAPI from '../../../src/stardust/BaseStardustAPI';
 import StardustProfile from '../../../src/stardust/Profile/StardustProfile';
 import StardustProfileIdentifier from '../../../src/stardust/Profile/StardustProfileIdentifier';
+import StardustProfileIdentifierAPI from '../../../src/stardust/Profile/StardustProfileIdentifierAPI';
 import StardustSignerAPI from '../../../src/stardust/Signers/StardustSignerAPI';
 import StardustCustodialSDK from '../../../src/stardust/StardustCustodialSDK';
 import StardustWallet from '../../../src/stardust/Wallet/StardustWallet';
